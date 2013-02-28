@@ -7,3 +7,6 @@ $this->breadcrumbs=array(
 <h1>About</h1>
 
 <p>This is the "about" page for my blog site.</p>
+
+<div>this is a test</div>
+<h1><?php echo Yii::t('app','Hello') ?></h1>

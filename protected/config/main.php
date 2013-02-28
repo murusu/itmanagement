@@ -1,5 +1,8 @@
 <?php
 
+function __($string, $params = array(), $category = "") {
+        return Yii::t($category, $string, $params);
+}
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
@@ -8,6 +11,8 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Yii Blog Demo',
+	'language'=>'zh-cn',
+	
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -26,21 +31,27 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+		/*
 		'db'=>array(
 			'connectionString' => 'sqlite:protected/data/blog.db',
 			'tablePrefix' => 'tbl_',
 		),
+		*/
+		'messages' => array(
+			'class' => 'CGettextMessageSource',
+			'useMoFile' => false,
+        ),
 		// uncomment the following to use a MySQL database
-		/*
+		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=blog',
+			'connectionString' => 'mysql:host=localhost;dbname=itmanagement',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'itmanagement',
+			'password' => 'itmanagement',
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
 		),
-		*/
+		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
             'errorAction'=>'site/error',
@@ -72,5 +83,5 @@ return array(
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
-	'params'=>require(dirname(__FILE__).'/params.php'),
+	//'params'=>require(dirname(__FILE__).'/params.php'),
 );
