@@ -5,7 +5,7 @@ return array(
         'messagePath'=>dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'messages',
         'languages'=>array('zh_cn'),
         'autoMerge'=>true,
-        'launchpad'=>true,
+        'launchpad'=>false,
         'skipUnused'=>true,
         'fileTypes'=>array('php'),
         'exclude'=>array(
